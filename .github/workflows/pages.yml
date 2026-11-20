@@ -59,23 +59,6 @@ jobs:
               encoding="utf-8",
           )
           PY
-      - name: Configure public Supabase client
-        env:
-          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
-          SUPABASE_PUBLISHABLE_KEY: ${{ vars.SUPABASE_PUBLISHABLE_KEY }}
-        run: |
-          python - <<'PY'
-          import json, os
-          from pathlib import Path
-          config = {
-              "supabaseUrl": os.environ.get("SUPABASE_URL", "").strip(),
-              "publishableKey": os.environ.get("SUPABASE_PUBLISHABLE_KEY", "").strip(),
-          }
-          Path("_site/auth-config.js").write_text(
-              "window.TRADING_AUTH_CONFIG = " + json.dumps(config) + ";\n",
-              encoding="utf-8",
-          )
-          PY
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
