@@ -34,6 +34,7 @@ function gateMode(mode) {
 function showGate() {
   if (ledgerChannel && client) { client.removeChannel(ledgerChannel); ledgerChannel = null; }
   document.body.classList.remove('account-ready');
+  document.body.style.overflow = 'hidden';
   document.querySelector('.wrap').inert = true;
   document.querySelector('.wrap').setAttribute('aria-hidden', 'true');
   gate.hidden = false;
@@ -58,6 +59,7 @@ function showGate() {
 }
 async function showMember(user) {
   document.body.classList.add('account-ready');
+  document.body.style.overflow = '';
   document.querySelector('.wrap').inert = false;
   document.querySelector('.wrap').removeAttribute('aria-hidden');
   gate.hidden = true;
