@@ -8,7 +8,7 @@
 <style>
 :root{color-scheme:dark;--bg:#080d18;--panel:#101827;--line:#1e2b3d;--muted:#8291a7;--text:#edf4ff;--cyan:#54d5ff;--green:#39df9c;--red:#ff637d;--yellow:#ffcb68;--purple:#a58cff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 52% -15%,#172941 0,transparent 48%),var(--bg);color:var(--text);font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}
-.wrap{max-width:1180px;margin:auto;padding:26px 22px 40px}.top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:22px}.brand{display:flex;align-items:center;gap:12px}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,#1e9fd0,#6b5ee8);display:grid;place-items:center;font-size:21px;box-shadow:0 8px 25px #269ed33b}.brand h1{font-size:17px;margin:0;letter-spacing:.02em}.brand small,.muted{color:var(--muted)}.connection{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:12px}.dot{width:8px;height:8px;border-radius:50%;background:var(--yellow);box-shadow:0 0 10px currentColor}.dot.online{background:var(--green)}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}.card{background:linear-gradient(145deg,#111b2b,#0e1623);border:1px solid var(--line);border-radius:16px;padding:17px;box-shadow:0 12px 30px #00000017;min-width:0}.wide{grid-column:span 8}.side{grid-column:span 4}.metric{grid-column:span 3;min-height:105px}.label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.11em}.value{font-size:23px;font-weight:680;letter-spacing:-.035em;margin-top:8px}.sub{font-size:12px;color:var(--muted);margin-top:2px}.positive{color:var(--green)}.negative{color:var(--red)}.yellow{color:var(--yellow)}
+.wrap{max-width:1180px;margin:auto;padding:26px 22px 40px}.top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:22px}.brand{display:flex;align-items:center;gap:12px}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,#1e9fd0,#6b5ee8);display:grid;place-items:center;font-size:21px;box-shadow:0 8px 25px #269ed33b}.brand h1{font-size:17px;margin:0;letter-spacing:.02em}.brand small,.muted{color:var(--muted)}.connection{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:12px}.dot{width:8px;height:8px;border-radius:50%;background:var(--yellow);box-shadow:0 0 10px currentColor}.dot.online{background:var(--green);animation:pulse 1.5s infinite}@keyframes pulse{50%{box-shadow:0 0 2px transparent;opacity:.65}}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}.card{background:linear-gradient(145deg,#111b2b,#0e1623);border:1px solid var(--line);border-radius:16px;padding:17px;box-shadow:0 12px 30px #00000017;min-width:0}.wide{grid-column:span 8}.side{grid-column:span 4}.metric{grid-column:span 3;min-height:105px}.label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.11em}.value{font-size:23px;font-weight:680;letter-spacing:-.035em;margin-top:8px}.sub{font-size:12px;color:var(--muted);margin-top:2px}.positive{color:var(--green)}.negative{color:var(--red)}.yellow{color:var(--yellow)}
 .charthead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.charthead h2{font-size:15px;margin:0 0 3px}.charthead p{font-size:12px;color:var(--muted);margin:0}.range{border:1px solid var(--line);border-radius:999px;padding:5px 9px;color:var(--muted);font-size:11px;white-space:nowrap}.chartbox{height:250px;margin:16px -3px 0;position:relative}.chartbox svg{width:100%;height:100%;overflow:visible}.gridline{stroke:#263449;stroke-width:1;stroke-dasharray:3 5}.area{fill:url(#mountainFill)}.mountain{fill:none;stroke:#59d6ff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 7px #42caff66)}.current{fill:#9deaff;stroke:#0b1421;stroke-width:3}.axis{fill:#73839a;font-size:10px}.empty{text-align:center;color:var(--muted);padding:75px 0}
 .signal{display:flex;align-items:center;justify-content:space-between;gap:8px}.badge{border-radius:999px;padding:5px 10px;font-weight:750;font-size:11px;letter-spacing:.08em;background:#263044;color:#c9d5e6}.badge.buy{background:#123d35;color:#70f0ba}.badge.sell{background:#451e2a;color:#ff92a3}.badge.hold{background:#41351c;color:#ffdc8b}.score{font-size:28px;font-weight:700;margin:16px 0 1px}.meter{height:7px;border-radius:9px;background:#263246;position:relative;margin:15px 0 8px;overflow:hidden}.meter i{display:block;height:100%;background:linear-gradient(90deg,#7565ef,#5bd9ff);border-radius:inherit;transition:width .7s}.meter-labels{display:flex;justify-content:space-between;color:var(--muted);font-size:10px}.note{padding:11px 12px;border-radius:11px;background:#0a121e;color:#bdc9d8;margin-top:16px;font-size:12px;min-height:48px}.valid{margin-top:15px;padding-top:12px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:8px;font-size:12px}.position{grid-column:span 6}.risk{grid-column:span 6}.section-title{font-size:13px;font-weight:650;margin-bottom:13px}.position-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.mini .label{font-size:10px}.mini .value{font-size:16px;margin-top:5px}.stopline{margin-top:15px;padding:10px 12px;background:#2a1720;border:1px solid #592535;border-radius:10px;color:#ffb1bd;font-size:12px}.stopline.off{background:#111b2b;border-color:var(--line);color:var(--muted)}.risklist{display:grid;gap:11px}.riskrow{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #1a2738;padding-bottom:9px;font-size:12px}.riskrow:last-child{border:0;padding:0}.riskrow span:first-child{color:var(--muted)}.footer{text-align:center;color:#697990;font-size:11px;margin-top:17px}
 .event{position:fixed;inset:0;display:grid;place-items:center;background:#050913bb;backdrop-filter:blur(5px);z-index:5;opacity:0;pointer-events:none}.event.show{animation:veil 1.65s ease forwards}.event-box{border:1px solid var(--cyan);background:#101c2b;padding:22px 30px;border-radius:20px;text-align:center;box-shadow:0 0 45px #36bde755;transform:scale(.84)}.event.show .event-box{animation:pop 1.65s ease forwards}.event-icon{font-size:32px}.event-title{font-size:23px;font-weight:800;letter-spacing:.08em;margin:4px}.event-detail{color:#b9c8dc;font-size:13px}@keyframes veil{0%{opacity:0}12%,75%{opacity:1}100%{opacity:0}}@keyframes pop{0%{transform:scale(.84)}15%,65%{transform:scale(1)}100%{transform:scale(.92)}}.event.sell .event-box,.event.stop .event-box{border-color:var(--red);box-shadow:0 0 45px #ff526455}.event.buy .event-box{border-color:var(--green);box-shadow:0 0 45px #35d99a55}
@@ -24,7 +24,7 @@
 <section class="card metric"><div class="label">Perubahan grafik</div><div class="value" id="change">—</div><div class="sub">rentang candle yang tersedia</div></section>
 <section class="card metric"><div class="label">Ekuitas simulasi</div><div class="value" id="equity">—</div><div class="sub" id="pnl">P/L hari ini —</div></section>
 <section class="card metric"><div class="label">Mode berjalan</div><div class="value" id="mode">—</div><div class="sub" id="symbol">—</div></section>
-<section class="card wide"><div class="charthead"><div><h2>Pergerakan harga</h2><p>Grafik gunung dari candle terbaru</p></div><span class="range">1 JAM · TERBARU</span></div><div class="chartbox" id="chart"><div class="empty">Grafik muncul setelah bot mengirim data</div></div></section>
+<section class="card wide"><div class="charthead"><div><h2>Pergerakan harga</h2><p>Grafik harga langsung dari feed perdagangan Indodax</p></div><span class="range" id="range">MENUNGGU FEED</span></div><div class="chartbox" id="chart"><div class="empty">Grafik muncul setelah bot mengirim data</div></div></section>
 <section class="card side"><div class="signal"><div><div class="label">Sinyal model</div><div class="score" id="score">—</div></div><span id="action" class="badge hold">MENUNGGU</span></div><div class="sub">Skor kelas naik · ambang mengikuti mode bot</div><div class="meter"><i id="meter" style="width:0"></i></div><div class="meter-labels"><span>0 · lemah</span><span>1 · kuat</span></div><div class="note" id="reason">Menunggu hasil analisis model.</div><div class="valid"><span>Validasi berimbang</span><b id="validation">—</b></div></section>
 <section class="card position"><div class="section-title">Posisi & hasil</div><div class="position-grid"><div class="mini"><div class="label">Aset dipegang</div><div class="value" id="quantity">—</div></div><div class="mini"><div class="label">Harga masuk</div><div class="value" id="entry">—</div></div><div class="mini"><div class="label">Nilai posisi</div><div class="value" id="positionValue">—</div></div><div class="mini"><div class="label">Batas order</div><div class="value">5% ekuitas</div></div></div><div id="stop" class="stopline off">STOP-LOSS · menunggu posisi aktif</div></section>
 <section class="card risk"><div class="section-title">Aturan transaksi</div><div class="risklist"><div class="riskrow"><span>BUY</span><b id="buyRule">—</b></div><div class="riskrow"><span>SELL</span><b id="sellRule">—</b></div><div class="riskrow"><span>Spread maksimal</span><b id="spreadRule">—</b></div><div class="riskrow"><span>Batas rugi harian</span><b>1% ekuitas awal</b></div><div class="riskrow"><span>Stop-loss posisi</span><b>2% dari harga masuk</b></div></div></section>
@@ -32,50 +32,123 @@
 </div>
 <div id="event" class="event"><div class="event-box"><div class="event-icon" id="eventIcon">✦</div><div class="event-title" id="eventTitle">ORDER</div><div class="event-detail" id="eventDetail"></div></div></div>
 <script>
-const $=id=>document.getElementById(id), fmtIDR=n=>'Rp'+Number(n||0).toLocaleString('id-ID',{maximumFractionDigits:0}), fmtQty=n=>Number(n||0).toLocaleString('id-ID',{maximumFractionDigits:8}), pct=n=>(Number(n||0)*100).toFixed(1)+'%';
-let previousEvent=0, lastData=null;
-function renderChart(values){const el=$('chart');if(!values||values.length<2){el.innerHTML='<div class="empty">Menunggu cukup data candle untuk menggambar grafik.</div>';return}const W=760,H=235,L=42,R=12,T=12,B=25,lo=Math.min(...values),hi=Math.max(...values),span=hi-lo||Math.max(1,hi*.001),x=i=>L+i*(W-L-R)/(values.length-1),y=v=>T+(hi-v)*(H-T-B)/span,pts=values.map((v,i)=>[x(i),y(v)]),line=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+','+p[1].toFixed(1)).join(' '),area=line+` L${x(values.length-1)},${H-B} L${L},${H-B} Z`,last=pts.at(-1);el.innerHTML=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Grafik harga seperti gunung"><defs><linearGradient id="mountainFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#48cfff" stop-opacity=".34"/><stop offset="100%" stop-color="#6258e8" stop-opacity=".015"/></linearGradient></defs><line class="gridline" x1="${L}" y1="${T}" x2="${W-R}" y2="${T}"/><line class="gridline" x1="${L}" y1="${(T+H-B)/2}" x2="${W-R}" y2="${(T+H-B)/2}"/><line class="gridline" x1="${L}" y1="${H-B}" x2="${W-R}" y2="${H-B}"/><text class="axis" x="0" y="${T+4}">${fmtIDR(hi)}</text><text class="axis" x="0" y="${H-B+3}">${fmtIDR(lo)}</text><path class="area" d="${area}"/><path class="mountain" d="${line}"/><circle class="current" cx="${last[0]}" cy="${last[1]}" r="4"/><text class="axis" x="${last[0]-40}" y="${Math.max(12,last[1]-10)}">${fmtIDR(values.at(-1))}</text></svg>`}
+const $=id=>document.getElementById(id);
+const fmtIDR=n=>'Rp'+Number(n||0).toLocaleString('id-ID',{maximumFractionDigits:0});
+const fmtQty=n=>Number(n||0).toLocaleString('id-ID',{maximumFractionDigits:8});
+const pct=n=>(Number(n||0)*100).toFixed(1)+'%';
+const WS_URL='wss://ws3.indodax.com/ws/';
+const WS_TOKEN='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE5NDY2MTg0MTV9.UR1lBM6Eqh0yWz-PVirw1uPCxe60FdchR8eNVdsskeo';
+let previousEvent=0,lastData=null,lastSnapshotAt='',marketSocket=null,reconnectDelay=1000,pingTimer=null,paintScheduled=false;
+let liveCandles=[],liveChart=[],modelParams=null,lastChartAt=0,lastPaint=0,authenticated=false;
+function renderChart(values){
+  const el=$('chart');
+  if(!values||values.length<2){el.innerHTML='<div class="empty">Menunggu feed harga…</div>';return}
+  const W=760,H=235,L=42,R=12,T=12,B=25,lo=Math.min(...values),hi=Math.max(...values),span=hi-lo||Math.max(1,hi*.001);
+  const x=i=>L+i*(W-L-R)/(values.length-1),y=v=>T+(hi-v)*(H-T-B)/span;
+  const pts=values.map((v,i)=>[x(i),y(v)]),line=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
+  const area=line+` L${x(values.length-1)},${H-B} L${L},${H-B} Z`,last=pts.at(-1);
+  el.innerHTML=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Grafik harga Bitcoin real-time"><defs><linearGradient id="mountainFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#48cfff" stop-opacity=".34"/><stop offset="100%" stop-color="#6258e8" stop-opacity=".015"/></linearGradient></defs><line class="gridline" x1="${L}" y1="${T}" x2="${W-R}" y2="${T}"/><line class="gridline" x1="${L}" y1="${(T+H-B)/2}" x2="${W-R}" y2="${(T+H-B)/2}"/><line class="gridline" x1="${L}" y1="${H-B}" x2="${W-R}" y2="${H-B}"/><text class="axis" x="0" y="${T+4}">${fmtIDR(hi)}</text><text class="axis" x="0" y="${H-B+3}">${fmtIDR(lo)}</text><path class="area" d="${area}"/><path class="mountain" d="${line}"/><circle class="current" cx="${last[0]}" cy="${last[1]}" r="4"/><text class="axis" x="${last[0]-40}" y="${Math.max(12,last[1]-10)}">${fmtIDR(values.at(-1))}</text></svg>`;
+}
+function seedLiveData(d){
+  if(d.updated_at===lastSnapshotAt)return;
+  lastSnapshotAt=d.updated_at||'';
+  liveCandles=Array.isArray(d.candles)?d.candles.map(c=>({...c})):[];
+  liveChart=Array.isArray(d.chart)?d.chart.slice(-180):[];
+  modelParams=d.model_params||null;
+}
+function currentFeatures(rows){
+  if(rows.length<13)return null;
+  const i=rows.length-1,closes=rows.map(c=>Number(c.close)),current=closes[i];
+  const returns=[1,3,6,12].map(lag=>Math.log(current/closes[i-lag]));
+  const daily=[];for(let j=i-11;j<=i;j++)daily.push(Math.log(closes[j]/closes[j-1]));
+  const mean=daily.reduce((a,b)=>a+b,0)/daily.length;
+  const volatility=Math.sqrt(daily.reduce((a,b)=>a+(b-mean)**2,0)/daily.length);
+  const body=(current-Number(rows[i].open))/Number(rows[i].open);
+  const volumes=rows.slice(i-11,i+1).map(c=>Math.max(0,Number(c.volume||0)));
+  const avg=volumes.reduce((a,b)=>a+b,0)/volumes.length;
+  const rel=avg>0?Number(rows[i].volume||0)/avg-1:0;
+  return [...returns,volatility,body+Math.max(-2,Math.min(2,rel))*.01].map(v=>Math.max(-2,Math.min(2,v)));
+}
+function updateLiveModel(price){
+  if(!modelParams||liveCandles.length<13)return;
+  const f=currentFeatures(liveCandles),z=f.map((v,i)=>(v-Number(modelParams.means[i]))/Number(modelParams.scales[i]));
+  const w=modelParams.weights,raw=Number(w[0])+z.reduce((sum,v,i)=>sum+Number(w[i+1])*v,0);
+  const probability=1/(1+Math.exp(-Math.max(-35,Math.min(35,raw))));
+  const valid=Number(modelParams.validation_balanced_accuracy)>Number(modelParams.validation_baseline);
+  const buy=Number(modelParams.buy_threshold||.6),sell=Number(modelParams.sell_threshold||.4);
+  const action=!valid?'HOLD':probability>=buy?'BUY':probability<=sell?'SELL':'HOLD';
+  lastData.price=price;lastData.score=probability;lastData.action=action;
+  lastData.reason=!valid?'Validasi model belum mengungguli patokan acak.':action==='BUY'?'Skor live melewati ambang BUY.':action==='SELL'?'Skor live melewati ambang SELL.':'Skor live belum melewati ambang transaksi.';
+  lastData.live_tick_at=Date.now();
+}
+function onTradeTick(tick){
+  if(!Array.isArray(tick)||tick.length<3)return;
+  const timestamp=Number(tick[0]),price=Number(tick[2]),volume=Number(tick[3]||0);
+  if(!Number.isFinite(price)||price<=0||!liveCandles.length)return;
+  const bucket=Math.floor(timestamp/3600)*3600;
+  let last=liveCandles.at(-1);
+  if(Number(last.time)<bucket){
+    while(Number(last.time)+3600<bucket){const t=Number(last.time)+3600;last={time:t,open:last.close,high:last.close,low:last.close,close:last.close,volume:0};liveCandles.push(last)}
+    last={time:bucket,open:Number(last.close),high:price,low:price,close:price,volume:0};liveCandles.push(last);
+    if(liveCandles.length>200)liveCandles.shift();
+  }
+  last.high=Math.max(Number(last.high),price);last.low=Math.min(Number(last.low),price);last.close=price;last.volume=Number(last.volume||0)+volume;
+  lastData.bid=lastData.bid||price;lastData.ask=lastData.ask||price;
+  updateLiveModel(price);
+  const now=Date.now();
+  if(now-lastChartAt>=750){liveChart.push(price);if(liveChart.length>180)liveChart.shift();lastChartAt=now}
+  lastData.chart=liveChart;lastData.change_pct=liveChart.length>1?(price/liveChart[0]-1)*100:0;
+  if(!lastPaint||now-lastPaint>250){lastPaint=now;update(lastData,false)}
+}
+function schedulePaint(){if(paintScheduled)return;paintScheduled=true;setTimeout(()=>{paintScheduled=false;if(lastData)update(lastData,false)},250)}
+function onOrderBook(book){
+  if(!book||!Array.isArray(book.bid)||!Array.isArray(book.ask)||!book.bid.length||!book.ask.length)return;
+  const bid=Number(book.bid[0].price),ask=Number(book.ask[0].price);
+  if(bid>0&&ask>=bid){lastData.bid=bid;lastData.ask=ask;lastData.spread_pct=(ask-bid)/((ask+bid)/2)*100;schedulePaint()}
+}
+function connectMarket(){
+  if(marketSocket&&[WebSocket.OPEN,WebSocket.CONNECTING].includes(marketSocket.readyState))return;
+  try{marketSocket=new WebSocket(WS_URL)}catch(_e){scheduleReconnect();return}
+  marketSocket.onopen=()=>{authenticated=false;marketSocket.send(JSON.stringify({params:{token:WS_TOKEN},id:1}))};
+  marketSocket.onmessage=event=>{
+    let msg;try{msg=JSON.parse(event.data)}catch(_e){return}
+    if(msg.id===1&&msg.result){authenticated=true;reconnectDelay=1000;marketSocket.send(JSON.stringify({method:1,params:{channel:'chart:tick-btcidr'},id:2}));marketSocket.send(JSON.stringify({method:1,params:{channel:'market:order-book-btcidr'},id:3}));clearInterval(pingTimer);pingTimer=setInterval(()=>{if(marketSocket?.readyState===WebSocket.OPEN)marketSocket.send(JSON.stringify({method:7,id:7}))},25000);setFeedStatus('LIVE · FEED INDODAX TERHUBUNG',true);return}
+    const result=msg.result;if(!result||!result.channel)return;
+    const data=result.data?.data;
+    if(result.channel==='chart:tick-btcidr'&&Array.isArray(data))for(const tick of data)onTradeTick(tick);
+    if(result.channel==='market:order-book-btcidr')onOrderBook(data);
+  };
+  marketSocket.onerror=()=>marketSocket?.close();
+  marketSocket.onclose=()=>{authenticated=false;clearInterval(pingTimer);setFeedStatus('MENYAMBUNG ULANG KE FEED…',false);scheduleReconnect()};
+}
+function scheduleReconnect(){setTimeout(()=>{if(lastData?.mode==='PUBLIC')connectMarket()},reconnectDelay);reconnectDelay=Math.min(30000,reconnectDelay*2)}
+function setFeedStatus(text,online){$('dot').classList.toggle('online',online);$('connection').textContent=text}
 function animateEvent(data){const id=Number(data.event_id||0),kind=data.event;if(!kind||id<=previousEvent){previousEvent=Math.max(previousEvent,id);return}previousEvent=id;const cls=kind.toLowerCase().includes('buy')?'buy':kind.toLowerCase().includes('stop')?'stop':'sell';$('event').className='event show '+cls;$('eventIcon').textContent=cls==='buy'?'↗':cls==='sell'?'↘':'⛔';$('eventTitle').textContent=kind.toUpperCase().replace('_',' ');$('eventDetail').textContent=`${fmtQty(data.event_quantity)} ${String(data.symbol||'').replace('IDR','')} · ${fmtIDR(data.event_price)}`;setTimeout(()=>$('event').className='event',1800)}
-function update(d){
+function update(d,snapshot=true){
+  if(snapshot&&d.mode==='PUBLIC'){seedLiveData(d);if(!lastData||!marketSocket){liveChart=Array.isArray(d.chart)?d.chart.slice(-180):[]}}
+  if(d.mode==='PUBLIC'&&lastData&&lastData.mode==='PUBLIC'&&marketSocket?.readyState===WebSocket.OPEN){d.bid=lastData.bid;d.ask=lastData.ask;d.spread_pct=lastData.spread_pct;if(d.updated_at===lastSnapshotAt){d.price=lastData.price;d.score=lastData.score;d.action=lastData.action;d.reason=lastData.reason;d.change_pct=lastData.change_pct}}
   lastData=d;
   const isPublic=d.mode==='PUBLIC';
-  $('dot').classList.toggle('online',!!d.running);
-  $('connection').textContent=isPublic?'DATA PUBLIK · diperbarui otomatis':d.running?'TERHUBUNG KE TERMUX':'BOT BELUM MENGIRIM DATA';
+  if(!(isPublic&&marketSocket?.readyState===WebSocket.OPEN)){$('dot').classList.toggle('online',!!d.running);$('connection').textContent=isPublic?'MENYAMBUNGKAN FEED LIVE…':d.running?'TERHUBUNG KE TERMUX':'BOT BELUM MENGIRIM DATA'}
   $('price').textContent=fmtIDR(d.price);
-  $('updated').textContent=d.updated_at?'Diperbarui '+new Date(d.updated_at).toLocaleTimeString('id-ID'):'Menunggu data bot';
-  $('change').textContent=d.change_pct==null?'—':(d.change_pct>=0?'+':'')+Number(d.change_pct).toFixed(2)+'%';
-  $('change').className='value '+(d.change_pct>=0?'positive':'negative');
-  $('equity').textContent=isPublic?'PRIVAT':fmtIDR(d.equity);
-  $('pnl').textContent=isPublic?'Saldo dan P/L akun tidak dipublikasikan':'P/L hari ini '+fmtIDR(d.daily_pnl);
-  $('pnl').className='sub '+(isPublic?'':d.daily_pnl>=0?'positive':'negative');
-  $('mode').textContent=isPublic?'PUBLIK':d.mode==='SIMULASI'?'PAPER':'LIVE';
-  $('symbol').textContent=d.symbol||'—';
-  $('score').textContent=Number(d.score||0).toFixed(3);
-  $('meter').style.width=Math.max(0,Math.min(100,Number(d.score||0)*100))+'%';
-  $('validation').textContent=pct(d.validation);
-  $('reason').textContent=isPublic?(d.note||d.reason||'Sinyal pasar publik.'):d.note||d.reason||'Tidak ada alasan tambahan.';
-  const action=$('action');action.textContent=d.action||'HOLD';action.className='badge '+String(d.action||'hold').toLowerCase();
-  $('quantity').textContent=isPublic?'PRIVAT':fmtQty(d.quantity)+' '+String(d.symbol||'').replace('IDR','');
-  $('entry').textContent=isPublic?'PRIVAT':d.quantity>0?fmtIDR(d.entry_price):'—';
-  $('positionValue').textContent=isPublic?'PRIVAT':d.quantity>0?fmtIDR(d.position_value):'—';
-  const stop=$('stop');
-  if(isPublic){stop.className='stopline off';stop.textContent='Data posisi dan stop-loss pribadi tidak ditampilkan di situs publik'}
-  else if(d.quantity>0){stop.className='stopline';stop.textContent=`STOP-LOSS · aktif di ${fmtIDR(d.stop_price)} (−${Number(d.stop_loss_pct||2).toFixed(1)}% dari harga masuk)`}
-  else{stop.className='stopline off';stop.textContent='STOP-LOSS · menunggu posisi aktif'}
-  $('buyRule').textContent=d.mode==='SIMULASI'?'Skor ≥ 0,200 (eksperimen)':'Skor ≥ 0,600 + validasi > 50%';
-  $('sellRule').textContent=d.mode==='SIMULASI'?'Skor ≤ 0,150':'Skor ≤ 0,400';
-  $('spreadRule').textContent='≤ '+Number(d.max_spread_pct||.5).toFixed(2)+'%';
-  renderChart(d.chart||[]);animateEvent(d)
+  $('updated').textContent=isPublic&&d.live_tick_at?'Tick langsung '+new Date(d.live_tick_at).toLocaleTimeString('id-ID'):d.updated_at?'Snapshot '+new Date(d.updated_at).toLocaleTimeString('id-ID'):'Menunggu data';
+  $('change').textContent=d.change_pct==null?'—':(d.change_pct>=0?'+':'')+Number(d.change_pct).toFixed(2)+'%';$('change').className='value '+(d.change_pct>=0?'positive':'negative');
+  $('equity').textContent=isPublic?'PRIVAT':fmtIDR(d.equity);$('pnl').textContent=isPublic?'Saldo dan P/L akun tidak dipublikasikan':'P/L hari ini '+fmtIDR(d.daily_pnl);$('pnl').className='sub '+(isPublic?'':d.daily_pnl>=0?'positive':'negative');
+  $('mode').textContent=isPublic?'PUBLIK':d.mode==='SIMULASI'?'PAPER':'LIVE';$('symbol').textContent=d.symbol||'—';$('score').textContent=Number(d.score||0).toFixed(3);$('meter').style.width=Math.max(0,Math.min(100,Number(d.score||0)*100))+'%';$('validation').textContent=pct(d.validation);
+  $('reason').textContent=isPublic?(d.reason||d.note||'Sinyal pasar publik.'):d.note||d.reason||'Tidak ada alasan tambahan.';
+  const action=$('action');action.textContent=d.action||'HOLD';action.className='badge '+String(d.action||'hold').toLowerCase();$('quantity').textContent=isPublic?'PRIVAT':fmtQty(d.quantity)+' '+String(d.symbol||'').replace('IDR','');$('entry').textContent=isPublic?'PRIVAT':d.quantity>0?fmtIDR(d.entry_price):'—';$('positionValue').textContent=isPublic?'PRIVAT':d.quantity>0?fmtIDR(d.position_value):'—';
+  const stop=$('stop');if(isPublic){stop.className='stopline off';stop.textContent='Data posisi dan stop-loss pribadi tidak ditampilkan di situs publik'}else if(d.quantity>0){stop.className='stopline';stop.textContent=`STOP-LOSS · aktif di ${fmtIDR(d.stop_price)} (−${Number(d.stop_loss_pct||2).toFixed(1)}% dari harga masuk)`}else{stop.className='stopline off';stop.textContent='STOP-LOSS · menunggu posisi aktif'}
+  $('buyRule').textContent=d.mode==='SIMULASI'?'Skor ≥ 0,200 (eksperimen)':'Skor ≥ 0,600 + validasi > 50%';$('sellRule').textContent=d.mode==='SIMULASI'?'Skor ≤ 0,150':'Skor ≤ 0,400';$('spreadRule').textContent='≤ '+Number(d.max_spread_pct||.5).toFixed(2)+'%';$('range').textContent=isPublic&&marketSocket?.readyState===WebSocket.OPEN?'LIVE · PERDAGANGAN':'SNAPSHOT';
+  renderChart(isPublic?liveChart:d.chart||[]);animateEvent(d);
+  if(isPublic)connectMarket();
 }
 async function poll(){
-  try{
-    let data=null;
-    try{const local=await fetch('/api/status',{cache:'no-store'});if(local.ok)data=await local.json()}catch(_e){}
+  try{let data=null;try{const local=await fetch('/api/status',{cache:'no-store'});if(local.ok)data=await local.json()}catch(_e){}
     if(!data){const r=await fetch('public-data.json?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('snapshot');data=await r.json()}
-    update(data)
-  }catch(e){$('dot').classList.remove('online');$('connection').textContent='DATA PUBLIK BELUM TERBIT';$('reason').textContent='Menunggu GitHub Actions menerbitkan snapshot data pasar.'}
+    update(data,true)
+  }catch(e){$('dot').classList.remove('online');$('connection').textContent='DATA PUBLIK BELUM TERBIT';$('reason').textContent='Menunggu GitHub Pages menerbitkan snapshot awal.'}
 }
-poll();setInterval(poll,15000);
+poll();setInterval(()=>{if(lastData?.mode==='PUBLIC')poll();else poll()},60000);
 </script>
 </body>
 </html>

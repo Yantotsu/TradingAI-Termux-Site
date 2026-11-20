@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import time
+import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlencode
@@ -39,7 +40,7 @@ def main() -> None:
     fee = float(pair.get("trade_fee_percent_taker", pair.get("trade_fee_percent", 0))) / 100
     model = train_from_exchange(
         SYMBOL, fee_rate=fee, days=90,
-        model_path=Path("/tmp/tradingai-public-model.json"),
+        model_path=Path(tempfile.gettempdir()) / "tradingai-public-model.json",
     )
     now = int(time.time())
     candles = fetch_candles(SYMBOL, now - 30 * 3600, now, "60")
@@ -60,6 +61,13 @@ def main() -> None:
         "stop_price": None, "stop_loss_pct": None,
         "note": "Sinyal publik dari data pasar. Saldo, posisi, dan order akun tidak dipublikasikan.",
         "reason": prediction.explanation, "chart": chart,
+        "candles": candles[-36:],
+        "model_params": {
+            "means": model["means"], "scales": model["scales"], "weights": model["weights"],
+            "validation_balanced_accuracy": model["validation_balanced_accuracy"],
+            "validation_baseline": model["validation_baseline"],
+            "buy_threshold": 0.60, "sell_threshold": 0.40,
+        },
         "event": "", "event_id": 0,
         "change_pct": ((chart[-1] / chart[0] - 1) * 100 if len(chart) > 1 else 0),
         "candle_count": model["candle_count"],
