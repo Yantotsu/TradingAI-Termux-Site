@@ -1,0 +1,25 @@
+{
+  "name": "tradingai-termux-site",
+  "version": "1.0.0",
+  "description": "Build dependencies for the invite-only Trading AI dashboard.",
+  "scripts": {
+    "build:account": "esbuild account.js --bundle --minify --target=es2022 --outfile=_site/account.bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yantotsu/TradingAI-Termux-Site.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Yantotsu/TradingAI-Termux-Site/issues"
+  },
+  "homepage": "https://github.com/Yantotsu/TradingAI-Termux-Site#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "2.119.1"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  },
+  "private": true
+}

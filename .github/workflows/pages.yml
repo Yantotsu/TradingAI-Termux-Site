@@ -27,13 +27,61 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install pinned browser dependencies
+        run: npm ci
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install pinned browser dependencies
+        run: npm ci
       - name: Fetch market and train model
         run: python public_snapshot.py
       - name: Prepare website
         run: |
           mkdir -p _site
-          cp index.html public-data.json _site/
+          cp index.html public-data.json auth-config.js _site/
+          npm run build:account
+          node --check _site/account.bundle.js
           touch _site/.nojekyll
+      - name: Configure public Supabase client
+        env:
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_PUBLISHABLE_KEY: ${{ vars.SUPABASE_PUBLISHABLE_KEY }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          config = {
+              "supabaseUrl": os.environ.get("SUPABASE_URL", "").strip(),
+              "publishableKey": os.environ.get("SUPABASE_PUBLISHABLE_KEY", "").strip(),
+          }
+          Path("_site/auth-config.js").write_text(
+              "window.TRADING_AUTH_CONFIG = " + json.dumps(config) + ";\n",
+              encoding="utf-8",
+          )
+          PY
+      - name: Configure public Supabase client
+        env:
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_PUBLISHABLE_KEY: ${{ vars.SUPABASE_PUBLISHABLE_KEY }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          config = {
+              "supabaseUrl": os.environ.get("SUPABASE_URL", "").strip(),
+              "publishableKey": os.environ.get("SUPABASE_PUBLISHABLE_KEY", "").strip(),
+          }
+          Path("_site/auth-config.js").write_text(
+              "window.TRADING_AUTH_CONFIG = " + json.dumps(config) + ";\n",
+              encoding="utf-8",
+          )
+          PY
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

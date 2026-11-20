@@ -1,5 +1,11 @@
-# Trading AI public dashboard
+# Trading AI Termux — Public Site
 
-A public GitHub Pages site showing BTCIDR market data, a locally trained logistic-regression signal, validation score, and a mountain-style price chart. The browser connects to the official Indodax Market Data WebSocket for live BTCIDR ticks and order-book spread. The model score is recomputed on each live tick; GitHub Actions refreshes model weights and validation data about every 15 minutes. See [Indodax Market Data WebSocket docs](https://github.com/btcid/indodax-official-api-docs/blob/master/Marketdata-websocket.md).
+Public GitHub Pages dashboard for live Indodax BTCIDR market data. Market price, chart and spread come from the exchange WebSocket; model weights and validation refresh on the scheduled GitHub Actions snapshot. Account access is invite-only and fails closed until Supabase is configured.
 
-This site never publishes balances, positions, orders, exchange credentials, or local bot state. It is a public market dashboard, not an account dashboard or trading service. Signals are educational and are not a guarantee.
+## Production account setup
+
+Follow [`docs/ACCOUNT_SETUP.md`](docs/ACCOUNT_SETUP.md) before enabling account access. The account gate is **fail-closed**: it hides the dashboard until Supabase has confirmed a signed-in account and active invitation.
+
+The backend migration and Edge Functions are in the private [`TradingAI-Termux` repository](https://github.com/Yantotsu/TradingAI-Termux/tree/main/supabase). Do not put a Supabase secret/service-role key in this public repository. The browser uses only the publishable key, with database access controlled by RLS.
+
+User balances shown in the portal are labeled `SIM_IDR` and are simulation credits only. This site does not accept deposits, withdrawals, or real-money trading balances. GitHub Pages serves static market assets publicly; Supabase RLS, not the visual gate, is the boundary protecting account data.
