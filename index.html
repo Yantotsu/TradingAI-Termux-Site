@@ -71,7 +71,7 @@ async function poll(){
   try{
     let data=null;
     try{const local=await fetch('/api/status',{cache:'no-store'});if(local.ok)data=await local.json()}catch(_e){}
-    if(!data){const r=await fetch('data.json?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('snapshot');data=await r.json()}
+    if(!data){const r=await fetch('public-data.json?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('snapshot');data=await r.json()}
     update(data)
   }catch(e){$('dot').classList.remove('online');$('connection').textContent='DATA PUBLIK BELUM TERBIT';$('reason').textContent='Menunggu GitHub Actions menerbitkan snapshot data pasar.'}
 }
