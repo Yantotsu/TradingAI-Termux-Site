@@ -3,5 +3,4 @@ public-data.json
 *.py[cod]
 node_modules/
 _site/
-node_modules/
-_site/
+supabase/.temp/

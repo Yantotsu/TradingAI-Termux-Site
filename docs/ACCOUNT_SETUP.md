@@ -5,9 +5,9 @@ The account gate is live in the website code, but it stays locked until an owner
 ## Provision the backend
 
 1. Create a Supabase project owned by the project operator.
-2. In the private `TradingAI-Termux` repo, use the account backend instructions and run `supabase/migrations/202611200001_accounts_and_demo_ledger.sql` against that project.
+2. In the private `TradingAI-Termux` repo, add the Actions variable `SUPABASE_PROJECT_REF` and secrets `SUPABASE_ACCESS_TOKEN` and `SUPABASE_DB_PASSWORD`. Run **Actions → Deploy Supabase backend** manually. The workflow applies the migration and deploys both Edge Functions; its secrets stay in the private repo.
 3. Create the owner's account in Supabase Auth. Insert that account's Auth UUID into both `public.account_profiles` (status `active`) and `public.account_admins` using the SQL snippet in the private repo's `docs/ACCOUNT_BACKEND.md`. This bootstraps the first owner without an invitation; later members must redeem one.
-4. Deploy the `issue-invite` and `redeem-invite` Edge Functions from the private repo with JWT verification enabled. The functions use the caller's JWT and publishable key; never disable RLS.
+4. The deployment workflow sets JWT verification through `supabase/config.toml`. The functions use the caller's JWT and publishable key; never disable RLS.
 5. In Supabase Auth URL Configuration, set the site URL to `https://yantotsu.github.io/TradingAI-Termux-Site/` and add that exact URL to Redirect URLs for password recovery. Enable email confirmation and configure a real SMTP sender before inviting public users. Review Auth rate limits and enable CAPTCHA before broad signup if needed.
 6. In the public site's GitHub repository settings, add these **Actions variables**:
    - `SUPABASE_URL`: the project's HTTPS URL.
