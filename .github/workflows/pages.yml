@@ -33,12 +33,6 @@ jobs:
           cache: npm
       - name: Install pinned browser dependencies
         run: npm ci
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-      - name: Install pinned browser dependencies
-        run: npm ci
       - name: Fetch market and train model
         run: python public_snapshot.py
       - name: Prepare website
